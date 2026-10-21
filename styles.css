@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #010102;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 25px;
+}
+
+.texto-encabezado {
+    font-size: 1.1rem;
+    color: #a0a0b8;
+    text-align: center;
+}
+
+/* Contenedor de navegación */
+.contenedor-navegacion {
+    background-color: #16213e;
+    padding: 14px 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.lista-navegacion {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Contenedor relativo para posicionar el tooltip */
+.elemento-navegacion {
+    position: relative;
+    display: inline-block;
+}
+
+.enlace-navegacion {
+    color: #f3042c;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+}
+
+.elemento-navegacion:hover .enlace-navegacion {
+    background-color: #e94560;
+    color: #ffffff;
+}
+
+/* Estilo base del Tooltip */
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0f3460;
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 10;
+}
+
+/* Flecha inferior del tooltip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #0f3460 transparent transparent transparent;
+}
+
+/* Estado general al pasar el cursor (:hover) */
+.elemento-navegacion:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animación 1: Desvanecer (Fade-in) */
+.tooltip-desvanecer {
+    transform: translate(-50%, 5px);
+}
+
+.elemento-navegacion:hover .tooltip-desvanecer {
+    transform: translate(-50%, 0);
+}
+
+/* Animación 2: Deslizar (Slide-in) */
+.tooltip-deslizar {
+    transform: translate(-50%, -15px);
+}
+
+.elemento-navegacion:hover .tooltip-deslizar {
+    transform: translate(-50%, 0);
+}
+
+/* Animación 3: Escalar (Scale-in) */
+.tooltip-escalar {
+    transform: translateX(-50%) scale(0.6);
+}
+
+.elemento-navegacion:hover .tooltip-escalar {
+    transform: translateX(-50%) scale(1);
+}

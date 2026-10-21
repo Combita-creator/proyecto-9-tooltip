@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IU de Tooltip - Proyecto 9</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado de la página -->
+    <p class="texto-encabezado">Aquí está todo lo que he construido</p>
+
+    <!-- Menú de navegación -->
+    <nav class="contenedor-navegacion">
+        <ul class="lista-navegacion">
+
+            <!-- Opción 1: Inicio (Fade-in) -->
+            <li class="elemento-navegacion">
+                <a href="#" class="enlace-navegacion">Inicio</a>
+                <div class="tooltip tooltip-desvanecer">
+                    Tooltip con efecto desvanecer
+                </div>
+            </li>
+
+            <!-- Opción 2: Proyectos (Slide-in) -->
+            <li class="elemento-navegacion">
+                <a href="#" class="enlace-navegacion">Proyectos</a>
+                <div class="tooltip tooltip-deslizar">
+                    Aparece al pasar el cursor sobre el elemento
+                </div>
+            </li>
+
+            <!-- Opción 3: Blog (Scale-in) -->
+            <li class="elemento-navegacion">
+                <a href="#" class="enlace-navegacion">Blog</a>
+                <div class="tooltip tooltip-escalar">
+                    Tooltip dinámico con efecto escala
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+
+</body>
+
+</html>
